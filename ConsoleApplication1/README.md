@@ -97,7 +97,8 @@ Removing Student A3 again:
 ...
 ```
 
-![Screenshot of Output](images/Class Roster Application Output.jpg)
+![Screenshot of Output](images/Class%20Roster%20Application%20Output.jpg)
+
 
 
 ## Functionality Overview
