@@ -96,6 +96,7 @@ All students in the roster:
 Removing Student A3 again:
 ...
 ```
+![Screenshot of Output](images/Class%20Roster%20Application%20Output.jpg)
 
 ## Functionality Overview
 
