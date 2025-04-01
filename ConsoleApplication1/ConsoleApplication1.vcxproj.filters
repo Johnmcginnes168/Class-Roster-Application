@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="images">
+      <UniqueIdentifier>{2edb4e95-fedc-4cd5-b1b9-17aeedc34bd0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="student.cpp">
@@ -38,5 +41,10 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\Class Roster Application Output.jpg">
+      <Filter>images</Filter>
+    </Image>
   </ItemGroup>
 </Project>
