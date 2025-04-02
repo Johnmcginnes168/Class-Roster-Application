@@ -1,130 +1,120 @@
-# Class Roster Application
+Class Roster Application
+Overview
+The Class Roster Application is designed to manage and manipulate student data in a class roster. It demonstrates the use of object-oriented principles in C++, such as classes, objects, encapsulation, dynamic memory management, and enumerations. This project helps you practice handling student information, detecting and correcting invalid email addresses, calculating average course completion times, filtering students by degree program, and managing memory with a custom destructor.
 
-## Overview
+The program provides an interactive way to:
 
-This program is designed to manage a class roster by storing, modifying, and displaying student information. It demonstrates basic object-oriented principles in C++, such as classes, objects, and dynamic memory management. The program allows the user to:
+View a list of students with detailed information.
 
-1. View a list of students and their details.
-2. Detect and print invalid email addresses.
-3. Calculate and display average course completion times for students.
-4. Filter students by their degree program.
-5. Remove a student from the roster.
-6. Handle dynamic memory management with a custom destructor.
+Detect and print invalid email addresses.
 
-## Features
+Calculate and display the average number of days each student spends completing their courses.
 
-- **Roster Management**: Create and manage a class roster by adding students and their details.
-- **Email Validation**: Identify invalid email addresses based on predefined criteria.
-- **Average Days in Course**: Calculate and display the average days spent on each course for each student.
-- **Degree Program Filtering**: Filter and display students by their degree program (e.g., Software, Network, Security).
-- **Student Removal**: Remove a student from the roster by their unique student ID.
+Filter students by their degree program (Security, Network, or Software).
 
-## File Structure
+Remove students from the roster by their student ID.
 
+Demonstrate dynamic memory management by using a custom destructor.
+
+Features
+Roster Management: Create, update, and manage a class roster by adding and removing students.
+
+Email Validation: Detect invalid email addresses based on basic email format rules.
+
+Average Days in Course: Calculate the average number of days students spend in their courses and display the result.
+
+Degree Program Filtering: Filter and list students based on their degree program (e.g., Software, Network, Security).
+
+Student Removal: Remove students from the roster by their student ID, and handle attempts to remove non-existent students gracefully.
+
+Dynamic Memory Management: The program uses dynamic memory allocation for student objects and properly deallocates memory using a custom destructor.
+
+File Structure
 The project includes the following files:
 
-- **main.cpp**: Contains the main program logic and invokes the methods from the `Roster` class.
-- **roster.cpp**: Implementation file for the `Roster` class, which contains the logic for managing the class roster.
-- **student.cpp**: Implementation file for the `Student` class, which contains the logic for managing the student class.
-- **roster.h**: Header file defining the `Roster` class and its methods.
-- **student.h**: Header file defining the `Student` class and its methods.
-- **degree.h**: Header file defining the `Degree` class.
+main.cpp: Contains the main program logic that interacts with the Roster and Student classes.
 
+roster.cpp: Implementation file for the Roster class, managing the class roster and related operations.
 
-## Requirements
+student.cpp: Implementation file for the Student class, holding student information and operations.
 
-This program requires a C++ compiler that supports C++11 or later (for example, GCC or Clang). 
+roster.h: Header file for the Roster class, declaring its methods and member variables.
 
+student.h: Header file for the Student class, declaring its methods and member variables.
+
+degree.h: Header file that defines the DegreeProgram enum, listing available degree types (Security, Network, Software).
+
+Requirements
 To compile and run the program, you will need:
 
-- A C++ compiler
-- An IDE or text editor to modify the source code (optional)
+A C++ compiler that supports C++11 or later (e.g., GCC, Clang, MSVC).
 
-## Instructions
+An IDE or text editor for modifying the source code (optional).
 
-### 1. Compilation
+For compiling the program, ensure your compiler supports C++11 or later, as certain features rely on C++11.
 
+Instructions
+1. Compilation
 To compile the program, use the following command (assuming you have the necessary C++ development environment set up):
 
-```bash
-g++ main.cpp roster.cpp -o ClassRoster
-```
+bash
+Copy
+g++ main.cpp roster.cpp student.cpp -o ClassRoster
+This will generate an executable file named ClassRoster.
 
-### 2. Running the Program
-
+2. Running the Program
 Once compiled, you can run the program with the following command:
 
-```bash
+bash
+Copy
 ./ClassRoster
-```
+3. Program Behavior
+Upon running the program, the following actions will occur:
 
-### 3. Program Behavior
+Introduction: The program prints a brief introduction to the class roster.
 
-Upon running the program, you will see:
+Display Roster: The program displays the full roster of students, including details like student ID, name, email address, age, and days spent in courses.
 
-1. A printed introduction to the class roster.
-2. The program will display the roster of students, including details like student ID, name, email, age, and days spent in courses.
-3. It will also list invalid email addresses.
-4. The program will calculate and show the average number of days to complete each course for each student.
-5. It will filter and print all students in the "Software" degree program.
-6. It will attempt to remove a student with a specific ID (e.g., A3) and show the updated roster.
-7. If you attempt to remove the same student again, the program will notify you that the student is not found.
+Invalid Emails: It checks and prints out any invalid email addresses found in the roster.
 
-### Example Output:
+Average Course Completion Time: The program calculates and displays the average number of days each student takes to complete their courses.
 
-```
-Class Roster Application
-Language: C++
-Name: John McGinnes
+Filter by Degree Program: It filters and prints all students in the "Software" degree program (you can modify this to filter by other programs like Security or Network).
 
-All students in the Roster:
-...
-Detecting invalid emails:
-...
+Student Removal: It removes a student with a specific student ID (e.g., A3) from the roster, then prints the updated roster.
 
-Average days to complete course for Student ID A1: ...
-Average days to complete course for Student ID A2: ...
+Repeated Removal: It attempts to remove the same student again and prints a message if the student is not found.
 
-All students in the Software degree program:
-...
-
-Removing Student A3 from the roster:
-...
-All students in the roster:
-...
-
-Removing Student A3 again:
-...
-```
+Example Output:
 ![Screenshot of Output](ConsoleApplication1/images/Class%20Roster%20Application%20Output.jpg)
 
-## Functionality Overview
+Functionality Overview
+Student Data
+The program uses a predefined array studentData[] to store sample student information. The data is parsed, and the class roster is populated using this information.
 
-### Student Data
-The program uses a pre-defined array `studentData[]` to store sample student information. It then parses this data and populates the class roster.
+Class Roster
+The Roster class manages the student data. Its key functions include:
 
-### Class `Roster`
-The `Roster` class manages the student information. Key functions include:
+add(): Adds a new student to the roster.
 
-- `add()`: Adds a student to the roster.
-- `printAll()`: Prints the information of all students in the roster.
-- `printInvalidEmails()`: Prints any invalid email addresses.
-- `printAverageDaysInCourse()`: Prints the average number of days a student takes to complete their courses.
-- `printByDegreeProgram()`: Filters and prints students based on their degree program (e.g., Software, Network, Security).
-- `remove()`: Removes a student by their ID from the roster.
+printAll(): Prints the details of all students in the roster.
 
-### Destructor
-The program includes a destructor in the `Roster` class that releases dynamically allocated memory when the roster is no longer needed.
+printInvalidEmails(): Identifies and prints any invalid email addresses.
 
-## Known Issues
+printAverageDaysInCourse(): Calculates and prints the average number of days a student takes to complete their courses.
 
-- The program assumes that email addresses are valid if they follow a simple pattern and may not catch all edge cases.
-- If a student is removed and then attempted to be removed again, the program will print a message indicating that the student was not found.
+printByDegreeProgram(): Filters students based on their degree program and prints those students.
 
-## License
+remove(): Removes a student from the roster using their student ID.
 
-This project is open source and free to use. Please feel free to modify it according to your needs.
+Destructor
+The program includes a destructor in the Roster class that ensures dynamic memory allocated for student objects is properly deallocated when the program finishes execution.
 
----
+Known Issues
+The current email validation logic checks only basic patterns, such as the presence of an "@" symbol and a "." symbol, which may not handle all edge cases. Future improvements could include more robust email validation.
 
-This README file provides a concise but comprehensive overview of the project and its functionality, helping anyone looking to understand how to build, run, and use the program.
+If a student is removed from the roster and then an attempt is made to remove them again, the program will print a message indicating that the student was not found in the roster.
+
+License
+This project is open-source and free to use. Feel free to modify and extend it as needed. Contributions are welcome!
+
