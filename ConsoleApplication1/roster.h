@@ -5,48 +5,49 @@
 #include "degree.h"
 using namespace std;
 
+// Roster class definition
+// This class manages a collection of students in the roster, allowing for adding, removing, and printing student information.
+
 class Roster {
 
 public:
 
-//Constructor Definition
+    // Constructor: Initializes the Roster, setting up the array of pointers for student data.
+    Roster();
 
-	Roster();
+    // Destructor: Cleans up dynamically allocated memory for the student objects in the roster.
+    ~Roster();
 
-//Destructor Definition
+    // Add a new student to the roster.
+    // This function sets the student's details and updates the roster array.
+    void add(string studentID, string firstName, string lastName, string emailAddress, int age, int courseDays1, int courseDays2, int courseDays3, DegreeProgram degreeProgram);
 
-	~Roster();
+    // Remove a student from the roster by their student ID.
+    // This function deletes the student from the roster array and shifts remaining students.
+    void remove(string studentID);
 
-//E.3a Adding to Class Roster Array, setting the instance variables and updating the roster (Definition)
+    // Print all students in the roster.
+    // This function loops through the array of students and prints each student’s information.
+    void printAll();
 
-	void add(string studentID,string firstName,string lastName,string emailAddress,int age,int	courseDays1,int	courseDays2,int	courseDays3,DegreeProgram degreeProgram);
+    // Print the average number of days in a course for a specific student by their student ID.
+    void printAverageDaysInCourse(string studentID);
 
-//E.3b Removing from Class Roster Array by Student ID (Definition)
+    // Print invalid email addresses from the roster.
+    // This function checks and displays emails that don't match proper formatting.
+    void printInvalidEmails();
 
-	void remove(string studentID);
+    // Print all students in a specific degree program (e.g., Security, Network, Software).
+    void printByDegreeProgram(DegreeProgram degreeProgram);
 
-//E.3c Printing the entire Student Roster (Definition)
+    // Get the student ID at a specific index in the roster array.
+    // This function retrieves the student ID for a given index in the class roster.
+    string getSIDIndex(int index);
 
-	void printAll();
+    // Index variable to track the current number of students in the roster.
+    int SIDIndex;
 
-//E.3d Printing the Average Days in a Course (Definition)
-
-	void printAverageDaysInCourse(string studentID);
-
-//E.3e Verifies the Student Emails and Displays Invalid Entires (Definition)
-
-	void printInvalidEmails();
-
-//E.3f Prints out Students by Degree Program (Definition)
-
-	void printByDegreeProgram(DegreeProgram degreeProgram);
-
-//Student ID - Index Used for Loops (Definition)
-
-	string getSIDIndex(int index);
-	int SIDIndex;
-
-//E.1 Creating an Array of Pointers called classRosterArray to hold the data provided in the studentData Table
-
-	Student* classRosterArray[5];
+    // Array of student pointers (classRosterArray) to hold the roster of students.
+    // This array stores the individual student objects.
+    Student* classRosterArray[5];
 };

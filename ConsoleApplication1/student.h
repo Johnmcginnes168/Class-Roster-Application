@@ -1,53 +1,79 @@
-//Section D.1: Creating Student Class Definitions
-
 #pragma once
 #include <string>
 #include <iostream>
 #include "degree.h"
 using namespace std;
 
+// Student class definition
+// This class encapsulates all information about a student, including personal details, course days, and degree program.
+
 class Student {
 
 public:
 
-	//Section D.2d: Constructor Definition
+    // Constructor: Initializes a new student with the provided details.
+    Student(string studentID, string firstName, string lastName, string emailAddress, int age, int courseDays[], DegreeProgram degreeProgram);
 
-	Student(string studentID,string firstName,string lastName,string emailAddress,int age,int courseDays[],DegreeProgram degreeProgram);
+    // Getter (Accessor) Functions:
+    // These functions retrieve the corresponding student details.
 
-	//Section D.2a: Getters (Accessors) Definition
+    // Get the student ID.
+    string getStudentID();
 
-	string getStudentID();
-	string getFirstName();
-	string getLastName();
-	string getEmailAddress();
-	int	getAge();
-	int* getCourseDays();
-	DegreeProgram getDegreeProgram();
+    // Get the first name of the student.
+    string getFirstName();
 
-	//Section D.2b: Setters (Mutators) Definition
+    // Get the last name of the student.
+    string getLastName();
 
-	void setStudentID (string studentID);
-	void setFirstName (string firstName);
-	void setLastName (string lastName);
-	void setEmailAddress (string emailAddress);
-	void setAge (int age);
-	void setCourseDays(int courseDays[]);
-	void setDegreeProgram (DegreeProgram degreeProgram);
+    // Get the email address of the student.
+    string getEmailAddress();
 
-	//Section D.2e: Print Function Definition
+    // Get the age of the student.
+    int getAge();
 
-	void print();
+    // Get the array of course days (days spent on each course).
+    int* getCourseDays();
 
-	//Section D.2c: Functions set to private to ensure accesses and changes are done using the accessors and mutators
+    // Get the degree program of the student (e.g., Security, Network, Software).
+    DegreeProgram getDegreeProgram();
+
+    // Setter (Mutator) Functions:
+    // These functions allow updating the student's details.
+
+    // Set the student ID.
+    void setStudentID(string studentID);
+
+    // Set the first name of the student.
+    void setFirstName(string firstName);
+
+    // Set the last name of the student.
+    void setLastName(string lastName);
+
+    // Set the email address of the student.
+    void setEmailAddress(string emailAddress);
+
+    // Set the age of the student.
+    void setAge(int age);
+
+    // Set the array of course days for the student.
+    void setCourseDays(int courseDays[]);
+
+    // Set the degree program of the student.
+    void setDegreeProgram(DegreeProgram degreeProgram);
+
+    // Print Function:
+    // This function outputs all student details, including ID, name, email, age, course days, and degree program.
+    void print();
 
 private:
 
-	string studentID;
-	string firstName;
-	string lastName;
-	string emailAddress;
-	int age;
-	int courseDays[3];
-	DegreeProgram degreeProgram;
+    // Private member variables to store the student's details.
+    string studentID;         // The student's ID.
+    string firstName;         // The student's first name.
+    string lastName;          // The student's last name.
+    string emailAddress;      // The student's email address.
+    int age;                  // The student's age.
+    int courseDays[3];        // Array storing the number of days the student spends in each of the three courses.
+    DegreeProgram degreeProgram; // The degree program the student is enrolled in (Security, Network, or Software).
 };
-
